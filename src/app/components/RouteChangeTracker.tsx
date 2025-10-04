@@ -14,7 +14,7 @@ export default function RouteChangeTracker() {
     const page_path = `${pathname}${
       searchParams?.toString() ? `?${searchParams}` : ""
     }`;
-    // @ts-ignore
+    // @ts-expect-error
     window.gtag?.("event", "page_view", { page_path });
   }, [pathname, searchParams]);
   return null;
