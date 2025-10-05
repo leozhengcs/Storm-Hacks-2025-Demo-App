@@ -1,5 +1,5 @@
 "use client"
-import { useMemo, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 
 const ITEMS = [
   { id: "cap", name: "Cappuccino", price: 4.25 },
@@ -26,12 +26,12 @@ export default function OrderPage() {
   const tax = +(subtotal * taxRate).toFixed(2);
   const total = +(subtotal + tax).toFixed(2);
 
-  const updateQty = (id: any, val: any) => {
+  const updateQty = (id: string, val: string) => {
     const n = Math.max(0, Math.min(99, Number(val) || 0));
     setQuantities((q) => ({ ...q, [id]: n }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const items = ITEMS.filter((i) => quantities[i.id] > 0).map((i) => ({
       id: i.id,
