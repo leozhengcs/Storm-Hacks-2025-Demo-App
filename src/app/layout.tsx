@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import GoogleTag from "./components/GoogleTag";
-import NotFoundRoute from "./components/NotFoundRoute";
+import RouteChangeTracker from "./components/RouteChangeTracker";
 import ConsentBanner from "./components/ConsentBanner";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -31,7 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleTag />
-        <NotFoundRoute />
+        <Suspense fallback={null}>
+          <RouteChangeTracker />
+        </Suspense>
         <ConsentBanner />
         {children}
       </body>
