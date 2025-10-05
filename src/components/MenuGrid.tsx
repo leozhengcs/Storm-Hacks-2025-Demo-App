@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function MenuGrid({ items }: { items: any }) {
   return (
     <div className="grid">
-      {items.map((item: any) => (
+      {items.map((item: { id: string, image: string, name: string, description: string, price: number}) => (
         <article key={item.id} className="card">
           <Image
             src={item.image}
