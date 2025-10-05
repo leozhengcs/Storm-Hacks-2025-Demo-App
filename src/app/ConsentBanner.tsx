@@ -15,7 +15,6 @@ export default function ConsentBanner() {
   if (visible !== "unknown") return null;
 
   const grant = () => {
-    // @ts-expect-error: Google Analytics attaches function
     window.gtag?.("consent", "update", {
       ad_storage: "granted",
       analytics_storage: "granted",
@@ -27,7 +26,6 @@ export default function ConsentBanner() {
   };
 
   const deny = () => {
-    // @ts-expect-error: Google Analytics attaches function
     window.gtag?.("consent", "update", {
       ad_storage: "denied",
       analytics_storage: "denied",

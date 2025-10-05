@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import GoogleTag from "./components/GoogleTag";
-import RouteChangeTracker from "./components/RouteChangeTracker";
-import ConsentBanner from "./components/ConsentBanner";
-import { Suspense } from "react";
+import Navbar from "@/components/Navbar";
+import GoogleTag from "./GoogleTag";
+import ConsentBanner from "./ConsentBanner";
+import RouteChangeTracker from "./RouteChangeTracker";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -17,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Storm Hacks 2025 Demo App",
-  description: "Basic information tracker",
+  title: "Sunrise Café",
+  description: "Cozy neighborhood café with fresh coffee and pastries.",
 };
 
 export default function RootLayout({
@@ -31,12 +32,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         <GoogleTag />
-        <Suspense fallback={null}>
-          <RouteChangeTracker />
-        </Suspense>
         <ConsentBanner />
-        {children}
+        <RouteChangeTracker />
+        {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} /> */}
+        <main className="p-16">{children}</main>
+        <footer className="footer">
+          <p>
+            © {new Date().getFullYear()} Sunrise Café · 123 Bean St, Brewtown
+          </p>
+        </footer>
       </body>
     </html>
   );
