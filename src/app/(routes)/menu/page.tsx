@@ -20,14 +20,14 @@ const ITEMS = [
     name: "Drip Coffee",
     price: 3.00,
     description: "Freshly brewed, medium roast.",
-    image: "https://images.unsplash.com/photo-1507138451611-3001135909b6?q=80&w=1600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1518057111178-44a106bad636?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: "croissant",
     name: "Butter Croissant",
     price: 3.75,
     description: "Flaky, buttery, baked every morning.",
-    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=1600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: "avotoast",
