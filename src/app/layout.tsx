@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import GoogleTag from "./GoogleTag";
 import ConsentBanner from "./ConsentBanner";
 import RouteChangeTracker from "./RouteChangeTracker";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -35,7 +35,9 @@ export default function RootLayout({
         <Navbar />
         <GoogleTag />
         <ConsentBanner />
-        <RouteChangeTracker />
+        <Suspense fallback={null}>
+          <RouteChangeTracker />
+        </Suspense>
         {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} /> */}
         <main className="p-16">{children}</main>
         <footer className="footer">
