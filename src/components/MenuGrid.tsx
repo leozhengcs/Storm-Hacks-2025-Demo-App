@@ -8,7 +8,7 @@ interface Items {
   price: number;
 }
 
-export default function MenuGrid({ items }: { items: [Items] }) {
+export default function MenuGrid({ items }: { items: Items[] }) {
   return (
     <div className="grid">
       {items.map((item: Items) => (
