@@ -32,7 +32,7 @@ export default function HomePage() {
 
       <section className="section">
         <h2>Hours</h2>
-        <p>Mon–Fri: 7:00–5:00 · Sat–Sun: 8:00–4:00</p>
+        <p>Mon-Fri: 7:00-5:00 · Sat-Sun: 8:00-4:00</p>
       </section>
     </>
   );
