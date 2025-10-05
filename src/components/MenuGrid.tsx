@@ -1,9 +1,17 @@
 import Image from "next/image";
 
-export default function MenuGrid({ items }: { items: any }) {
+interface Items {
+  id: string;
+  image: string;
+  name: string;
+  description: string;
+  price: number;
+}
+
+export default function MenuGrid({ items }: { items: [Items] }) {
   return (
     <div className="grid">
-      {items.map((item: { id: string, image: string, name: string, description: string, price: number}) => (
+      {items.map((item: Items) => (
         <article key={item.id} className="card">
           <Image
             src={item.image}
