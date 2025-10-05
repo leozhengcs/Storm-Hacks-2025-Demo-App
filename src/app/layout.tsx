@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import GoogleTag from "./components/GoogleTag";
-import RouteChangeTracker from "./components/RouteChangeTracker";
+import NotFoundRoute from "./components/NotFoundRoute";
 import ConsentBanner from "./components/ConsentBanner";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleTag />
-        <RouteChangeTracker />
+        <NotFoundRoute />
         <ConsentBanner />
         {children}
       </body>

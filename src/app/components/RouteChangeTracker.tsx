@@ -1,4 +1,5 @@
 "use client";
+// NOTE: DO NOT use this component directly, use the NotFoundRoute component instead of this.
 
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
