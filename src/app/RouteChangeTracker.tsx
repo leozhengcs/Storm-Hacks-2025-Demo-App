@@ -19,7 +19,9 @@ export default function RouteChangeTracker() {
     console.log("Route change:", page_path);
 
     // Only send GA if configured
+    // @ts-expect-error: Imported
     if (GA_ID && window.gtag) {
+      // @ts-expect-error: Imported
       window.gtag("event", "page_view", {
         page_path,
         page_location: window.location.href,
