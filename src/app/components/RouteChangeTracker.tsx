@@ -14,7 +14,8 @@ export default function RouteChangeTracker() {
     const page_path = `${pathname}${
       searchParams?.toString() ? `?${searchParams}` : ""
     }`;
-    // @ts-expect-error
+    // @ts-expect-error: Google Analytics attaches function
+    // 
     window.gtag?.("event", "page_view", { page_path });
   }, [pathname, searchParams]);
   return null;
